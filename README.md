@@ -1,11 +1,11 @@
-# Job Alert Script — US PM/BA Job Tracker
+# Job Alert Script — US PM/BA & Software Engineering Job Tracker
 
-A Google Apps Script that monitors 50 top US product company career pages and emails you instantly when a new Product Manager, Business Analyst, or related role is posted.
+A Google Apps Script that monitors 50 top US product company career pages and emails you when a new Product Manager, Business Analyst, Software Engineer, or related role is posted.
 
 ## What it does
 
 - Visits each company's career page every hour automatically
-- Scans for keywords like "product manager", "business analyst", "program manager", "product analyst", and more
+- Scans for product, business analysis, and software engineering job-title keywords
 - Logs matches to a Google Sheet to avoid duplicate alerts
 - Emails you instantly when something new is found
 - Processes companies in small batches to avoid timeout errors
@@ -36,6 +36,8 @@ Reddit, Discord, Snap, Pinterest, Bumble
 
 ## Keywords tracked
 
+### Product management and business analysis
+
 - product manager
 - senior product manager
 - associate product manager
@@ -47,6 +49,17 @@ Reddit, Discord, Snap, Pinterest, Bumble
 - technical product manager
 - staff product manager
 - principal product manager
+
+### Software engineering
+
+- software engineer, software developer, software development engineer
+- backend, frontend, full-stack, and web engineer
+- mobile, Android, and iOS engineer
+- platform, infrastructure, site reliability, DevOps, and cloud engineer
+- security, data, machine learning, QA, and test automation engineer
+- embedded software and firmware engineer
+- engineering manager
+- staff and principal software engineer
 
 ## Setup (10 minutes)
 
