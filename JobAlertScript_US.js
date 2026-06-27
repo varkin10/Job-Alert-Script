@@ -1,6 +1,6 @@
 // ============================================================
 // JOB ALERT SYSTEM — Google Apps Script (Batch Version)
-// Monitors top US product company career pages for PM/BA roles
+// Monitors top US product company career pages for PM/BA and software engineering roles
 // Sends email alerts when new jobs are found
 // Fixes: Exceeded maximum execution time error
 // Adapted for: US Job Market
@@ -15,6 +15,7 @@ const CONFIG = {
   fetchTimeout: 10000,
 
   keywords: [
+    // Product management and business analysis
     "product manager",
     "senior product manager",
     "associate product manager",
@@ -26,6 +27,36 @@ const CONFIG = {
     "technical product manager",
     "staff product manager",
     "principal product manager",
+
+    // Software engineering
+    "software engineer",
+    "software developer",
+    "software development engineer",
+    "backend engineer",
+    "back-end engineer",
+    "frontend engineer",
+    "front-end engineer",
+    "full stack engineer",
+    "full-stack engineer",
+    "web engineer",
+    "mobile engineer",
+    "android engineer",
+    "ios engineer",
+    "platform engineer",
+    "infrastructure engineer",
+    "site reliability engineer",
+    "devops engineer",
+    "cloud engineer",
+    "security engineer",
+    "data engineer",
+    "machine learning engineer",
+    "qa engineer",
+    "test automation engineer",
+    "embedded software engineer",
+    "firmware engineer",
+    "engineering manager",
+    "staff software engineer",
+    "principal software engineer",
   ],
 
   companies: [
@@ -178,9 +209,9 @@ function findKeywordMatches(html, companyName, url) {
 }
 
 function sendAlertEmail(jobs) {
-  const subject = `🚀 Job Alert: ${jobs.length} new PM/BA opening(s) found!`;
+  const subject = `🚀 Job Alert: ${jobs.length} new PM/BA or software engineering opening(s) found!`;
 
-  let body = `Hi there,\n\nNew product roles were detected on the following career pages:\n\n`;
+  let body = `Hi there,\n\nNew product, business analysis, or software engineering roles were detected on the following career pages:\n\n`;
 
   jobs.forEach((job) => {
     body += `──────────────────────\n`;
@@ -235,7 +266,7 @@ function testAlert() {
   sendAlertEmail([
     {
       company: "Stripe",
-      keyword: "product manager",
+      keyword: "software engineer",
       url: "https://stripe.com/jobs/search",
       foundAt: new Date().toLocaleString("en-US", { timeZone: "America/New_York" }),
     },
